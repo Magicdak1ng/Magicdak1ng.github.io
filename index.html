@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Balises SEO -->
+  <meta name="description" content="Taxi Services - Votre solution de transport complète, proposant des trajets privés, des taxis conventionnés et des véhicules de qualité.">
+  <meta name="keywords" content="taxi, trajet privé, taxi conventionné, transport médical, CPAM, véhicule sécurisé, chauffeur professionnel">
+  <meta name="robots" content="index, follow">
+  <title>Taxi Services - Votre solution de transport</title>
+  <!-- Import de la police Google Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Réinitialisation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Fond global en dégradé jaune -> noir */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #FFD700, #000000);
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    /* En-tête : fond noir, texte blanc, avec deux zones : gauche = titre/slogan, droite = infos contact */
+    header {
+      background-color: #000;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #FFD700;
+    }
+    .header-left h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .header-left p {
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .header-right p {
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+    /* Navigation : fond noir, liens en blanc */
+    nav {
+      background-color: #000;
+      padding: 10px 0;
+      margin-bottom: 30px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #cccccc;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Sections : fond semi-transparent noir avec bordure dorée, texte blanc */
+    section {
+      background-color: rgba(0, 0, 0, 0.8);
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid #FFD700;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    section h2 {
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    section p,
+    section ul {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+    section ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    /* Grille à deux colonnes */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #FFD700;
+    }
+    /* Pour la section Contact, afficher l'image en entier */
+    #contact .grid img {
+      object-fit: contain;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-right {
+        margin-top: 10px;
+      }
+    }
+    /* Footer : fond noir, texte blanc */
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #FFD700;
+      color: #ffffff;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>TAXI SERVICES</h1>
+      <p>Votre solution de transport complète</p>
+    </div>
+    <div class="header-right">
+      <p><strong>Tél :</strong> 06 10 86 66 24</p>
+      <p><strong>Email :</strong> taxi.sevices38@yahoo.com</p>
+      <p>Disponibilité : 7J/7 24H/24</p>
+    </div>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#services-taxi">Services Taxi</a></li>
+      <li><a href="#taxi-conventionne">Taxi Conventionné</a></li>
+      <li><a href="#vehicules">Véhicules</a></li>
+      <li><a href="#a-propos">Qui sommes-nous ?</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <!-- Section Services Taxi -->
+    <section id="services-taxi">
+      <div class="grid">
+        <div>
+          <h2>Services Taxi</h2>
+          <p>Nous proposons une gamme complète de services taxi pour répondre à tous vos besoins :</p>
+          <ul>
+            <li>Trajet privé</li>
+            <li>Professionnel</li>
+            <li>Gare et Aéroport</li>
+            <li>Réservation possible</li>
+            <li>Circuits touristiques</li>
+          </ul>
+        </div>
+        <div>
+          <img src="C:\Users\youss\Magicdak1ng.github.io\lyon-5109185_1280.jpg" alt="Service Taxi">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Taxi Conventionné -->
+    <section id="taxi-conventionne">
+      <div class="grid">
+        <div>
+          <h2>Taxi Conventionné</h2>
+          <p>Nos taxis conventionnés, agréés CPAM, offrent des services spécialisés :</p>
+          <ul>
+            <li>Transport conventionné</li>
+            <li>Déplacement médical</li>
+            <li>Hôpitaux et Cliniques</li>
+            <li>Consultations</li>
+            <li>Radiothérapie</li>
+            <li>Dialyse</li>
+            <li>Véhicule agréé CPAM</li>
+          </ul>
+        </div>
+        <div>
+          <img src="C:\Users\youss\Magicdak1ng.github.io\taxis-conventionnes-cpam.jpg" alt="Taxi Conventionné">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Véhicules -->
+    <section id="vehicules">
+      <div class="grid">
+        <div>
+          <h2>Véhicules</h2>
+          <p>Nos véhicules sont conçus pour assurer votre sécurité et votre confort :</p>
+          <ul>
+            <li>Conduite en sécurité</li>
+            <li>Norme sanitaire</li>
+            <li>Véhicule propre</li>
+            <li>Chauffeur professionnel</li>
+          </ul>
+        </div>
+        <div>
+          <img src="C:\Users\youss\Magicdak1ng.github.io\chauffeur_8.jpg" alt="Véhicule et Chauffeur">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Qui sommes-nous ? -->
+    <section id="a-propos">
+      <h2>Qui sommes-nous ?</h2>
+      <p>
+        Taxi Services est une entreprise dédiée à fournir des solutions de transport fiables et de qualité.
+        Forts de plusieurs années d'expérience, nous mettons un point d'honneur à assurer le confort, la sécurité
+        et la ponctualité de nos services, que ce soit pour des trajets privés, professionnels ou médicaux, ainsi que pour des circuits touristiques.
+      </p>
+    </section>
+    
+    <!-- Section Contact -->
+    <section id="contact">
+      <div class="grid">
+        <div>
+          <h2>Contact</h2>
+          <p>Pour toute demande ou réservation, n’hésitez pas à nous contacter :</p>
+          <p><strong>Téléphone :</strong> 06 10 86 66 24</p>
+          <p><strong>Email :</strong> taxi.sevices38@yahoo.com</p>
+          <p><strong>Adresse :</strong> 15 rue docteur André Chaix, 38300 Bourgoin-Jallieu</p>
+        </div>
+        <div>
+          <!-- Remplacez ce chemin par l'URL de l'image hébergée sur votre serveur -->
+          <img src="C:\Users\youss\Magicdak1ng.github.io\cartee.jpg" alt="Contact">
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Taxi Services - Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
