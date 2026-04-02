@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taxi Services - Service de taxi professionnel à Bourgoin-Jallieu. Disponible 7j/7 24h/24. Trajets privés, gare/aéroport, circuits touristiques, taxi conventionné CPAM.">
+  <meta name="keywords" content="taxi, Bourgoin-Jallieu, transport médical, CPAM, aéroport, gare, taxi conventionné">
+  <title>Taxi Services - Transport professionnel à Bourgoin-Jallieu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --dark-gray: #1a1a1a;
+      --gold: #d4af37;
+      --light-gold: #f4e4b1;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+      padding: 1rem 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .navbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .navbar nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .navbar nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .navbar nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .navbar nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--gold);
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 70px;
+      height: 90vh;
+      background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('lyon-5109185_1280.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 0%, var(--black) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--light-gold);
+    }
+
+    .hero .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn:hover {
+      color: var(--black);
+    }
+
+    /* Quick Info Bar */
+    .quick-info {
+      background: var(--dark-gray);
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .quick-info .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: fadeIn 1s ease;
+    }
+
+    .info-item i {
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .info-item div h3 {
+      font-size: 0.9rem;
+      color: var(--light-gold);
+      font-weight: 400;
+    }
+
+    .info-item div p {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Section */
+    section {
+      padding: 5rem 0;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--gold);
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(26, 26, 26, 0.8) 100%);
+      padding: 2rem;
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+      transform: scale(0);
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scale(1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+      border-color: var(--light-gold);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+
+    .service-card ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    .service-card ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--light-gold);
+    }
+
+    .service-card ul li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--light-gold);
+      line-height: 1.8;
+    }
+
+    .about-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Medical Transport Section */
+    .medical-transport {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, var(--black) 100%);
+      padding: 3rem;
+      border-radius: 10px;
+      border: 2px solid var(--gold);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .medical-transport img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid var(--gold);
+    }
+
+    .medical-info h3 {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .medical-info ul {
+      list-style: none;
+    }
+
+    .medical-info ul li {
+      padding: 0.7rem 0;
+      padding-left: 2rem;
+      position: relative;
+      font-size: 1.1rem;
+      color: var(--light-gold);
+    }
+
+    .medical-info ul li::before {
+      content: '\f0f8';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(26, 26, 26, 0.8) 100%);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid var(--gold);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateX(10px);
+    }
+
+    .contact-item i {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-top: 0.3rem;
+    }
+
+    .contact-item div h4 {
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-item div p {
+      color: var(--light-gold);
+      font-size: 1rem;
+    }
+
+    .contact-item div a {
+      color: var(--light-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item div a:hover {
+      color: var(--gold);
+    }
+
+    .map-container {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .map-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+      padding: 3rem 0 1rem;
+      border-top: 2px solid var(--gold);
+      text-align: center;
+    }
+
+    .footer-content {
+      margin-bottom: 2rem;
+    }
+
+    .footer-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--gold);
+      color: var(--light-gold);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Scroll Animation */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .scroll-animate.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .navbar nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--dark-gray);
+        transition: left 0.3s ease;
+        padding: 2rem;
+      }
+
+      .navbar nav.active {
+        left: 0;
+      }
+
+      .navbar nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .quick-info .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-content,
+      .medical-transport,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .medical-transport {
+        padding: 2rem 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .hero .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .navbar .logo {
+        font-size: 1.3rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Taxi Services</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navMenu">
+        <ul>
+          <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
+          <li><a href="#services" onclick="closeMenu()">Services</a></li>
+          <li><a href="#medical" onclick="closeMenu()">CPAM</a></li>
+          <li><a href="#propos" onclick="closeMenu()">À Propos</a></li>
+          <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <h1>Taxi Services</h1>
+      <p>Votre transport professionnel à Bourgoin-Jallieu</p>
+      <div class="cta-buttons">
+        <a href="tel:0610866624" class="btn">Appeler Maintenant</a>
+        <a href="#contact" class="btn">Nous Contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Info Bar -->
+  <div class="quick-info">
+    <div class="container">
+      <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <div>
+          <h3>Disponibilité</h3>
+          <p>7j/7 - 24h/24</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h3>Téléphone</h3>
+          <p>06 10 86 66 24</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h3>Localisation</h3>
+          <p>Bourgoin-Jallieu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Nos Services</h2>
+      <div class="services-grid scroll-animate">
+        <div class="service-card">
+          <i class="fas fa-car"></i>
+          <h3>Trajets Privés</h3>
+          <ul>
+            <li>Déplacements professionnels</li>
+            <li>Sorties personnelles</li>
+            <li>Événements spéciaux</li>
+            <li>Réservation possible</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-plane-departure"></i>
+          <h3>Gare & Aéroport</h3>
+          <ul>
+            <li>Transfert aéroport Lyon</li>
+            <li>Gare TGV</li>
+            <li>Prise en charge ponctuelle</li>
+            <li>Suivi de vol</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-route"></i>
+          <h3>Circuits Touristiques</h3>
+          <ul>
+            <li>Découverte de la région</li>
+            <li>Circuits personnalisés</li>
+            <li>Chauffeur guide</li>
+            <li>Tarifs à la journée</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medical Transport Section -->
+  <section id="medical">
+    <div class="container">
+      <h2 class="section-title">Taxi Conventionné CPAM</h2>
+      <div class="medical-transport scroll-animate">
+        <div class="medical-info">
+          <h3>Transport Médical Agréé</h3>
+          <p style="color: var(--light-gold); margin-bottom: 1.5rem;">Nos taxis sont conventionnés CPAM pour assurer vos déplacements médicaux en toute sérénité.</p>
+          <ul>
+            <li>Transport médical conventionné</li>
+            <li>Rendez-vous hôpitaux et cliniques</li>
+            <li>Séances de dialyse</li>
+            <li>Radiothérapie et chimiothérapie</li>
+            <li>Consultations médicales</li>
+            <li>Prise en charge CPAM</li>
+          </ul>
+        </div>
+        <div>
+          <img src="taxis-conventionnes-cpam.jpg" alt="Taxi Conventionné CPAM">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="propos">
+    <div class="container">
+      <h2 class="section-title">Qui Sommes-Nous ?</h2>
+      <div class="about-content scroll-animate">
+        <div class="about-text">
+          <p>
+            <strong style="color: var(--gold);">Taxi Services</strong> est votre partenaire de confiance pour tous vos déplacements à Bourgoin-Jallieu et ses environs.
+          </p>
+          <p>
+            Forts de plusieurs années d'expérience dans le transport de personnes, nous mettons un point d'honneur à offrir un service de qualité supérieure, alliant ponctualité, confort et sécurité.
+          </p>
+          <p>
+            Notre chauffeur professionnel est à votre disposition 7 jours sur 7, 24 heures sur 24, pour répondre à tous vos besoins de transport, qu'ils soient privés, professionnels ou médicaux.
+          </p>
+          <div style="margin-top: 2rem;">
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 200px;">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem;"></i>
+                <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Sécurité</h4>
+                <p style="color: var(--light-gold);">Véhicules conformes aux normes sanitaires</p>
+              </div>
+              <div style="flex: 1; min-width: 200px;">
+                <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem;"></i>
+                <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Professionnalisme</h4>
+                <p style="color: var(--light-gold);">Chauffeur expérimenté et courtois</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="chauffeur_8.jpg" alt="Chauffeur Professionnel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contactez-Nous</h2>
+      <div class="contact-wrapper scroll-animate">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4>Téléphone</h4>
+              <p><a href="tel:0610866624">06 10 86 66 24</a></p>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Disponible 7j/7 - 24h/24</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:taxi.sevices38@yahoo.com">taxi.sevices38@yahoo.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Adresse</h4>
+              <p>15 rue Docteur André Chaix</p>
+              <p>38300 Bourgoin-Jallieu</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-container">
+          <img src="cartee.jpg" alt="Carte Bourgoin-Jallieu">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <h3>Taxi Services</h3>
+        <p style="color: var(--light-gold); margin-bottom: 1rem;">Votre transport professionnel à Bourgoin-Jallieu</p>
+      </div>
+      <div class="social-links">
+        <a href="tel:0610866624" title="Téléphone"><i class="fas fa-phone"></i></a>
+        <a href="mailto:taxi.sevices38@yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="#accueil" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Taxi Services - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle mobile menu
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.remove('active');
+    }
+
+    // Scroll animations
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.scroll-animate');
+
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+
+        if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    // Navbar scroll effect
+    let lastScroll = 0;
+    function handleNavbar() {
+      const navbar = document.querySelector('.navbar');
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 100) {
+        navbar.style.boxShadow = '0 4px 30px rgba(212, 175, 55, 0.5)';
+      } else {
+        navbar.style.boxShadow = '0 4px 20px rgba(212, 175, 55, 0.3)';
+      }
+
+      lastScroll = currentScroll;
+    }
+
+    // Initialize
+    window.addEventListener('scroll', () => {
+      animateOnScroll();
+      handleNavbar();
+    });
+
+    window.addEventListener('load', () => {
+      animateOnScroll();
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
