@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://magicdak1ng.github.io/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://magicdak1ng.github.io/chauffeur_8.jpg</image:loc>
+      <image:title>Chauffeur taxi professionnel Bourgoin-Jallieu</image:title>
+      <image:caption>Service de taxi professionnel à Bourgoin-Jallieu, disponible 24h/24</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicdak1ng.github.io/taxis-conventionnes-cpam.jpg</image:loc>
+      <image:title>Taxi conventionné CPAM Isère</image:title>
+      <image:caption>Transport médical conventionné CPAM dans l'Isère</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicdak1ng.github.io/lyon-5109185_1280.jpg</image:loc>
+      <image:title>Taxi aéroport Lyon</image:title>
+      <image:caption>Transfert taxi vers l'aéroport de Lyon depuis Bourgoin-Jallieu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicdak1ng.github.io/cartee.jpg</image:loc>
+      <image:title>Localisation Taxi Services Bourgoin-Jallieu</image:title>
+      <image:caption>15 rue Docteur André Chaix, 38300 Bourgoin-Jallieu</image:caption>
+    </image:image>
+  </url>
+</urlset>

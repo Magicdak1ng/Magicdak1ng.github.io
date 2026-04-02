@@ -1,0 +1,22 @@
+# robots.txt pour Taxi Services Bourgoin-Jallieu
+# https://magicdak1ng.github.io/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://magicdak1ng.github.io/sitemap.xml
+
+# Google Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 1
